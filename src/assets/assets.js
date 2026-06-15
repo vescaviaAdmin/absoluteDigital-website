@@ -1,13 +1,17 @@
-import logo from './logo.svg'
+import logo from './absolute_digital_logo.png'
 import arrow_icon from './arrow_icon.svg'
 import group_profile from './group_profile.png'
 import bgImage1 from './bgImage1.png'
 import bgImage2 from './bgImage2.png'
 import hero_img from './hero_img.png'
-import microsoft_logo from './microsoft_logo.png'
-import zoom_logo from './zoom_logo.png'
-import rakuten_logo from './rakuten_logo.png'
-import coinbase_logo from './coinbase_logo.png'
+import colorPrints from './colorPrints.png'
+import naturals from './naturals.png'
+import riseInRise from './riseInRise.png'
+import maaSatiArogyaHospital from './maaSatiArogyaHospital.png'
+import zeroHaat from './zeroHaat.png'
+import renzo from './renzo_logo.png'
+import renzo_logo from './renzo_logo.png'
+import lubist from './lubist.png'
 import ads_icon from './ads_icon.svg'
 import content_icon from './content_icon.svg'
 import marketing_icon from './marketing_icon.svg'
@@ -23,21 +27,52 @@ import facebook_icon from './facebook_icon.svg'
 import twitter_icon from './twitter_icon.svg'
 import instagram_icon from './instagram_icon.svg'
 import linkedin_icon from './linkedin_icon.svg'
-import logo_dark from './logo_dark.svg'
-import airbnb_logo from './airbnb_logo.svg'
-import google_logo from './google_logo.svg'
+import logo_dark from './absolute_digital_logo.png'
 import menu_icon_dark from './menu_icon_dark.svg'
 import sun_icon from './sun_icon.svg'
 import moon_icon from './moon_icon.svg'
 
 
 export const company_logos = [
-  microsoft_logo,
-  zoom_logo,
-  rakuten_logo,
-  coinbase_logo,
-  airbnb_logo,
-  google_logo,
+  { name: 'Color Prints', src: colorPrints },
+  { name: 'Naturals', src: naturals },
+  { name: 'Maa Sati Arogya Hospital', src: maaSatiArogyaHospital },
+  { name: 'Zero Haat', src: zeroHaat },
+  { name: 'Renzo', src: renzo_logo },
+  { name: 'Lubist', src: lubist },
+]
+
+export const clientWorkData = [
+  {
+    title: 'Color Prints',
+    description: 'Brand-focused creative and digital execution for a print and design business.',
+    image: colorPrints,
+  },
+  {
+    title: 'Naturals',
+    description: 'Digital presentation and campaign support for a consumer-facing wellness brand.',
+    image: naturals,
+  },
+  {
+    title: 'Maa Sati Arogya Hospital',
+    description: 'Professional digital presence work for a healthcare-focused organization.',
+    image: maaSatiArogyaHospital,
+  },
+  {
+    title: 'Zero Haat',
+    description: 'Ecommerce-oriented creative and product communication for an online marketplace.',
+    image: zeroHaat,
+  },
+  {
+    title: 'Renzo',
+    description: 'Visual and digital brand support tailored to a contemporary retail identity.',
+    image: renzo,
+  },
+  {
+    title: 'Lubist',
+    description: 'Clean, conversion-minded digital assets and presentation work for a product brand.',
+    image: lubist,
+  },
 ]
 
 const assets = {
@@ -47,6 +82,14 @@ const assets = {
   bgImage1,
   bgImage2,
   hero_img,
+  colorPrints,
+  naturals,
+  riseInRise,
+  maaSatiArogyaHospital,
+  zeroHaat,
+  renzo,
+  renzo_logo,
+  lubist,
   ads_icon,
   content_icon,
   marketing_icon,
@@ -65,18 +108,14 @@ const assets = {
   logo_dark,
   menu_icon_dark,
   sun_icon,
-  moon_icon
+  moon_icon,
 }
 
 export default assets
 
 export const teamData = [
-  { name: 'MD Amdad Islam', title: 'CEO & founder', image: 'https://avatars.githubusercontent.com/u/195456266?v=4' },
-  { name: 'Zahidul Islam Mahim', title: 'Ads manager', image: 'https://avatars.githubusercontent.com/u/92626624?v=4' },
-  { name: 'LITAN MOLLA', title: 'Vice president', image: 'https://avatars.githubusercontent.com/u/185999515?v=4' },
-  { name: 'Juiena Parvin', title: 'Marketing & sales', image: 'https://media.licdn.com/dms/image/v2/D4E35AQGl5y_yc0UFPg/profile-framedphoto-shrink_200_200/B4EZbNKlB2HIAY-/0/1747198824940?e=1756562400&v=beta&t=KNEENe2FnrYOLUZMB7_eK-4S_ARBmXJx-QcxFRMUhmA' },
-  { name: 'Emily Parker', title: 'Content marketer', image: 'https://randomuser.me/api/portraits/women/11.jpg' },
-  { name: 'Ryan Mitchell', title: 'Content writer', image: 'https://randomuser.me/api/portraits/men/9.jpg' },
-  { name: 'Megan Brooks', title: 'Performance manager', image: 'https://randomuser.me/api/portraits/women/12.jpg' },
-  { name: 'Amber Foster', title: 'Senior writer', image: 'https://randomuser.me/api/portraits/women/14.jpg' },
+  { name: 'Vikash Kumar', title: 'CEO and Cofounder' },
+  { name: 'Ashish Bhardwaj', title: 'Digital Marketing Expert and Cofounder' },
+  { name: 'Test Data', title: 'Test Role' },
+  { name: 'Test Data', title: 'Test Role' },
 ]

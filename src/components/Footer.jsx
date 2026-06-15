@@ -22,7 +22,7 @@ const Footer = ({ theme }) => {
         >
           <img
             src={theme === "dark" ? assets.logo_dark : assets.logo}
-            alt=""
+            alt="Absolute Digital logo"
             className="w-32 sm:w-44"
           />
           <p className="max-w-md">
@@ -86,15 +86,19 @@ const Footer = ({ theme }) => {
       transition={{ duration: 0.5, delay: 0.4}}
       viewport={{once: true}}
       className="pb-6 text-sm text-gray-500 flex justify-center sm:justify-between gap-4 flex-wrap">
-        <p>Copyright 2025 © agency.ai - All Right Reserved.</p>
+        <p>Copyright 2025 © Absolute Digital - All Right Reserved.</p>
         <p>
-          <a href="https://amdadislam.netlify.app/">Developed By Amdad Islam</a>
+          <a href="https://amdadislam.netlify.app/">Developed By Roshan Soni</a>
         </p>
         <div className="flex items-center justify-between gap-4">
-          <img src={assets.facebook_icon} alt="" />
-          <img src={assets.twitter_icon} alt="" />
-          <img src={assets.instagram_icon} alt="" />
-          <img src={assets.linkedin_icon} alt="" />
+          <a href="https://www.facebook.com/share/1FYmXWtYSN/" target="_blank" rel="noreferrer">
+            <img src={assets.facebook_icon} alt="Facebook" />
+          </a>
+          {/* <img src={assets.twitter_icon} alt="Twitter" /> */}
+          <a href="https://www.instagram.com/absolutedigital_official?igsh=d2dmbGliMjI2c2g3" target="_blank" rel="noreferrer">
+            <img src={assets.instagram_icon} alt="Instagram" />
+          </a>
+          {/* <img src={assets.linkedin_icon} alt="LinkedIn" /> */}
         </div>
       </motion.div>
     </motion.div>

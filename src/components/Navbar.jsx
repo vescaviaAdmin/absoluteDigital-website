@@ -16,7 +16,7 @@ const Navbar = ({ theme, setTheme }) => {
       {/* Logo */}
       <img
         src={theme === "dark" ? assets.logo_dark : assets.logo}
-        alt="logo"
+        alt="Absolute Digital logo"
         className="w-32 sm:w-40"
       />
 
