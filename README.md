@@ -1,4 +1,4 @@
-# ⚡ Agency.AI Landing Page
+# ⚡ Absolute Digital Landing Page
 
 
 A modern, animated, and responsive **AI Agency Landing Page** built with **React (Vite)**, **Tailwind CSS**, and **Framer Motion**.  
@@ -68,6 +68,5 @@ agency.ai-landing-page/
 ## Install dependencies
 
 npm install
-
 
 

@@ -23,15 +23,23 @@ const TrustedBy = () => {
       whileInView="visible"
       transition={{ staggerChildren: 0.1}}
       viewport={{once: true}}
-      className="flex items-center justify-center flex-wrap gap-10 m-4">
+      className="grid w-full max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3">
         {company_logos.map((logo, index)=>(
-            <motion.img
+            <motion.div
             variants={{
               hidden: {opacity: 0, y: 10},
               visible: {opacity: 1, y: 0},
             }} 
             transition={{duration: 0.4}}
-            key={index} src={logo} alt="" className='max-h-5 sm:max-h-6 dark:drop-shadow-xl'/>
+            key={index}
+            className="flex h-24 items-center justify-center rounded-2xl border border-gray-200 bg-white/80 px-5 py-4 shadow-lg shadow-gray-100 dark:border-gray-700 dark:bg-gray-900/80 dark:shadow-white/5"
+            >
+              <img
+                src={logo.src}
+                alt={logo.name}
+                className='h-12 w-full object-contain dark:drop-shadow-xl sm:h-14'
+              />
+            </motion.div>
         ))}
       </motion.div>
     </motion.div>

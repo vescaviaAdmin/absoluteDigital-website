@@ -11,5 +11,66 @@
 }
 
 @theme {
-  --color-primary: #5044E5;
+  --color-primary: #e33647;
+  --color-primary-50: #fff1f2;
+  --color-primary-100: #ffe4e6;
+  --color-primary-200: #fecdd3;
+  --color-primary-300: #fda4af;
+  --color-primary-400: #fb7185;
+  --color-primary-500: #e33647;
+  --color-primary-600: #c92a3a;
+  --color-primary-700: #a61f2d;
+  --color-primary-800: #881a26;
+  --color-primary-900: #5f1620;
+  --color-white: #fff8f8;
+  --color-black: #16090c;
+  --color-slate-50: #fff3f4;
+  --color-gray-50: #fff8f8;
+  --color-gray-100: #fdeff1;
+  --color-gray-200: #f6dde0;
+  --color-gray-300: #e8c5ca;
+  --color-gray-400: #c2959b;
+  --color-gray-500: #9c6f76;
+  --color-gray-600: #754d54;
+  --color-gray-700: #4f3137;
+  --color-gray-800: #301c20;
+  --color-gray-900: #1d1014;
+  --color-gray-950: #12080a;
+}
+
+html {
+  background-color: var(--color-white);
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-gray-700);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+::selection {
+  background: rgba(227, 54, 71, 0.18);
+  color: var(--color-primary-900);
+}
+
+input,
+textarea,
+button {
+  accent-color: var(--color-primary);
+}
+
+#hero .bg-clip-text.text-transparent {
+  background-image: linear-gradient(90deg, #e33647 0%, #f06b77 100%);
+}
+
+.mix-blend-lighten {
+  background-image: radial-gradient(
+    circle,
+    rgba(227, 54, 71, 0.52) 0%,
+    rgba(227, 54, 71, 0.32) 45%,
+    rgba(227, 54, 71, 0) 75%
+  ) !important;
 }
