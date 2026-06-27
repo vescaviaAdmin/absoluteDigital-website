@@ -1,13 +1,45 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import TrustedBy from './components/TrustedBy'
-import Services from './components/Services'
-import OurWork from './components/OurWork'
-import Teams from './components/Teams'
-import ContactUs from './components/ContactUs'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Toaster } from 'react-hot-toast'
-import Footer from './components/Footer'
+import SiteHeader from './components/SiteHeader'
+import SiteFooter from './components/SiteFooter'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ServicesPage from './pages/ServicesPage'
+import WorkPage from './pages/WorkPage'
+import IndustriesPage from './pages/IndustriesPage'
+import ProductsPage from './pages/ProductsPage'
+import ContactPage from './pages/ContactPage'
+
+const routes = {
+  '/': {
+    title: 'Absolute Digital | Digital Marketing Agency & Product Builder',
+    page: HomePage,
+  },
+  '/about': {
+    title: 'About | Absolute Digital',
+    page: AboutPage,
+  },
+  '/services': {
+    title: 'Services | Absolute Digital',
+    page: ServicesPage,
+  },
+  '/work': {
+    title: 'Work | Absolute Digital',
+    page: WorkPage,
+  },
+  '/industries': {
+    title: 'Industries | Absolute Digital',
+    page: IndustriesPage,
+  },
+  '/products': {
+    title: 'Products | Absolute Digital',
+    page: ProductsPage,
+  },
+  '/contact': {
+    title: 'Contact | Absolute Digital',
+    page: ContactPage,
+  },
+}
 
 const getInitialTheme = () => {
   const saved = localStorage.getItem('theme')
@@ -18,64 +50,55 @@ const getInitialTheme = () => {
   return 'light'
 }
 
-const App = () => {
+const normalizePath = (path) => {
+  if (!path || path === '') return '/'
+  const trimmed = path.replace(/\/+$/, '')
+  return trimmed === '' ? '/' : trimmed
+}
+
+  const App = () => {
   const [theme, setTheme] = useState(getInitialTheme)
+  const [pathname, setPathname] = useState(() => normalizePath(window.location.pathname))
+
+  const activeRoute = useMemo(() => routes[pathname] || routes['/'], [pathname])
+  const ActivePage = activeRoute.page
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')
     localStorage.setItem('theme', theme)
   }, [theme])
 
-  const dotRef = useRef(null)
-  const outlineRef = useRef(null)
-
-  // Refs for custom cursor position tracking 
-  const mouse = useRef({x: 0, y: 0})
-  const position = useRef({x: 0, y: 0})
+  useEffect(() => {
+    document.title = activeRoute.title
+  }, [activeRoute])
 
   useEffect(() => {
-    const handelMouseMove = (e) => {
-      mouse.current.x = e.clientX
-      mouse.current.y = e.clientY
+    const handlePopState = () => setPathname(normalizePath(window.location.pathname))
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigate = (nextPath) => {
+    const normalized = normalizePath(nextPath)
+    if (normalized === pathname) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
     }
 
-    document.addEventListener('mousemove', handelMouseMove)
-
-    const animate = () => {
-      position.current.x += (mouse.current.x - position.current.x) * 0.1
-      position.current.y += (mouse.current.y - position.current.y) * 0.1
-
-      if (dotRef.current && outlineRef.current) {
-        dotRef.current.style.transform = `translate3D(${mouse.current.x -6}px, ${mouse.current.y -6}px, 0)`
-        outlineRef.current.style.transform = `translate3D(${position.current.x -20}px, ${position.current.y -20}px, 0)`
-      }
-      requestAnimationFrame(animate)
-    }
-    animate()
-
-    return() => {
-      document.removeEventListener('mousemove', handelMouseMove)
-    }
-  },[])
+    window.history.pushState({}, '', normalized)
+    setPathname(normalized)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
-    <div className="relative  bg-white dark:bg-black transition-colors">
-      <Toaster />
-      <Navbar theme={theme} setTheme={setTheme} />
-      <Hero />
-      <TrustedBy />
-      <Services />
-      <OurWork />
-      <Teams />
-      <ContactUs />
-      <Footer theme={theme} />
-
-      {/* Custom Cursor Ring */}
-      <div ref={outlineRef} className="fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-[9999" 
-      style={{transition: 'transform 0.1s ease-out'}}>
-      </div>
-      {/* Custom Cursor Dot */}
-      <div ref={dotRef}  className="fixed top-0 left-0 h-3 w-3 rounded-full bg-primary pointer-events-none z-[9999]"></div>
+    <div className="relative min-h-screen overflow-x-hidden bg-white text-gray-700 transition-colors dark:bg-black">
+      <Toaster position="top-right" />
+      <SiteHeader theme={theme} setTheme={setTheme} pathname={pathname} navigate={navigate} />
+      <main>
+        <ActivePage navigate={navigate} />
+      </main>
+      <SiteFooter theme={theme} navigate={navigate} />
     </div>
   )
 }
