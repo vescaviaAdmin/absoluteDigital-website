@@ -27,7 +27,6 @@ const ContactPage = () => {
             <div className="mt-5 space-y-4 text-sm leading-7 text-gray-600 dark:text-gray-300">
               <p>{companyProfile.address}</p>
               <p>{companyProfile.phone}</p>
-              <p>{companyProfile.secondaryPhone}</p>
               <p>{companyProfile.email}</p>
             </div>
             <div className="mt-6 rounded-[1.5rem] bg-primary/6 p-4">

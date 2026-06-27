@@ -13,13 +13,12 @@ export const navItems = [
 export const companyProfile = {
   name: 'Absolute Digital',
   tag: 'Digital Marketing Agency & Software Product Builder',
-  email: 'absolutedigital.business@gmail.com',
-  phone: '+91 93043 56329',
-  secondaryPhone: '+91 80835 52909',
-  whatsapp: 'https://wa.me/919304356329',
+  email: 'support@absolutedigital.in',
+  phone: '+91 84460 26351',
+  whatsapp: 'https://wa.me/918446026351',
   instagram: 'https://www.instagram.com/absolutedigital_official?igsh=d2dmbGliMjI2c2g3',
   facebook: 'https://www.facebook.com/share/1FYmXWtYSN/',
-  address: 'Bettiah, Bihar, India',
+  address: 'Near Kali Bari Road, Hazaribagh 825301, Jharkhand, India',
   promise:
     'We help ambitious businesses build visibility, generate qualified leads, launch better digital experiences, and turn marketing into measurable growth.',
 }

@@ -57,9 +57,6 @@ const SiteFooter = ({ theme, navigate }) => {
             <a href={`tel:${companyProfile.phone.replace(/\s+/g, '')}`} className="block hover:text-primary">
               {companyProfile.phone}
             </a>
-            <a href={`tel:${companyProfile.secondaryPhone.replace(/\s+/g, '')}`} className="block hover:text-primary">
-              {companyProfile.secondaryPhone}
-            </a>
             <a href={`mailto:${companyProfile.email}`} className="block hover:text-primary">
               {companyProfile.email}
             </a>
